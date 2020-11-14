@@ -1,0 +1,32 @@
+{
+  "name": "hw2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/katesof/advanced-hws.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/katesof/advanced-hws/issues"
+  },
+  "homepage": "https://gitlab.com/katesof/advanced-hws#readme",
+  "devDependencies": {
+    "browser-sync": "^2.26.13",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-clean": "^0.4.0",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-imagemin": "^7.1.0",
+    "gulp-js-minify": "0.0.3",
+    "gulp-sass": "^4.1.0",
+    "gulp-с": "^3.0.2"
+  },
+  "dependencies": {}
+}
