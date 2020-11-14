@@ -1,5 +1,5 @@
 {
-  "name": "hw2",
+  "name": "forkio",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://gitlab.com/katesof/advanced-hws.git"
+    "url": "git+https://gitlab.com/katesof/forkio-project.git"
   },
-  "author": "",
+  "author": "V Borislavski, K Sofishenko",
   "license": "ISC",
   "bugs": {
-    "url": "https://gitlab.com/katesof/advanced-hws/issues"
+    "url": "https://gitlab.com/katesof/forkio-project/issues"
   },
-  "homepage": "https://gitlab.com/katesof/advanced-hws#readme",
+  "homepage": "https://gitlab.com/katesof/forkio-project#readme",
   "devDependencies": {
     "browser-sync": "^2.26.13",
     "gulp": "^4.0.2",
@@ -27,6 +27,6 @@
     "gulp-js-minify": "0.0.3",
     "gulp-sass": "^4.1.0",
     "gulp-с": "^3.0.2"
-  },
-  "dependencies": {}
+  }
 }
+
