@@ -1,69 +1,82 @@
-const { src, dest, parallel, series, watch } = require('gulp');
-const browserSync = require('browser-sync').create();
-const sass = require('gulp-sass');
-const autoprefixer = require('gulp-autoprefixer');
-const clean = require('gulp-clean');
-const cleanCSS = require('gulp-clean-css');
-const concat = require('gulp-concat');
-const imagemin = require('gulp-imagemin');
-const minifyJS = require('gulp-js-minify');
+const gulp = require("gulp");
+const sass = require("gulp-sass");
+const minify = require("gulp-minify");
+const imagemin = require("gulp-imagemin");
+const rename = require("gulp-rename");
+const concat = require("gulp-concat");
+const clean = require("gulp-clean");
+const browserSync = require("browser-sync").create();
 
-const serve = (cb) => { 
+function devWatch() {
     browserSync.init({
-        server: {
-            baseDir: './'
-        },
-        port: 5500,
-        notify: false,
-        browser: 'chrome'
+        server: "./"
     });
-    cb();
+
+    gulp.watch("src/styles/*.scss", convertScss);
+    gulp.watch("./src/scripts/*.js", compressJs);
+    gulp.watch("./src/images/**", gulp.series(cleanImages, compressImages));
+    gulp.watch("./index.html").on("change", browserSync.reload);
 }
-const watcher = (cb) => {
-    watch('./index.html').on('change', browserSync.reload);
-    watch('./src/scss/**/*.scss', toMinifyCSS);
-    watch('./src/js/**/*.js', toMinifyJS);
-    watch('./src/img/**/*.{jpg, png, gif, svg, webp}', toMinifyIMG);
-    cb();
-}
-const cleaner = () => {
-    return src('./dist/**/*')
-        .pipe(clean());
-}
-const toMinifyCSS = () => {
-    return src('./src/scss/main.scss')
-        .pipe(sass({
-            outputStyle: 'expanded'
-        }))
-        .pipe(concat('style.min.css'))
-        .pipe(autoprefixer({
-            overrideBrowserslist: ['last 5 ie version']
-        }))
-        .pipe(cleanCSS())
-        .pipe(dest('./dist/css/'))
+
+function convertScss() {
+    return gulp
+        .src("src/styles/*.scss")
+        .pipe(concat("style.scss"))
+        .pipe(
+            sass({
+                outputStyle: "compressed",
+                errorLogToConsole: true
+            })
+        )
+        .on("error", sass.logError)
+        .pipe(rename({ suffix: ".min" }))
+        .pipe(gulp.dest("./dist/styles"))
         .pipe(browserSync.stream());
 }
-const toMinifyJS = () => {
-    return src('./src/js/script.js')
-        .pipe(concat('script.min.js'))
-        .pipe(minifyJS())
-        .pipe(dest('./dist/js/'))
+
+function compressJs() {
+    return gulp
+        .src("./src/scripts/*.js")
+        .pipe(concat("script.js"))
+        .pipe(
+            minify({
+                noSource: true,
+                ext: {
+                    min: ".min.js"
+                }
+            })
+        )
+        .pipe(gulp.dest("./dist/scripts"))
         .pipe(browserSync.stream());
 }
-const toMinifyIMG = () => {
-    return src('./src/img/**/*')
+
+function compressImages() {
+    return gulp
+        .src("src/images/**/*")
         .pipe(imagemin())
-        .pipe(dest('./dist/img/'))
+        .pipe(gulp.dest("dist/images"))
         .pipe(browserSync.stream());
 }
-exports.serve = serve;
-exports.watcher = watcher;
-exports.cleaner = cleaner;
-exports.toMinifyCSS = toMinifyCSS;
-exports.toMinifyJS = toMinifyJS;
-exports.toMinifyIMG = toMinifyIMG;
-const build = series(toMinifyIMG, parallel(toMinifyCSS, toMinifyJS));
-const dev = series(build, serve, watcher);
-exports.build = build;
-exports.dev = dev;
-exports.default = dev;
+
+function cleanDist() {
+    return gulp
+        .src("./dist", { read: false, allowEmpty: true })
+        .pipe(clean())
+        .pipe(browserSync.stream());
+}
+
+function cleanImages() {
+    return gulp
+        .src("./dist/images", { read: false, allowEmpty: true })
+        .pipe(clean())
+        .pipe(browserSync.stream());
+}
+
+exports.clean = cleanDist;
+exports.default = gulp.series(
+    cleanDist,
+    convertScss,
+    compressJs,
+    compressImages,
+    devWatch
+);
