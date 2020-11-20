@@ -2,3 +2,5 @@
 *.iml
 node_modules
 thumbs.db
+.DS_Store
+.vscode
