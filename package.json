@@ -25,5 +25,9 @@
     "gulp-concat": "^2.6.1",
     "browser-sync": "^2.26.7",
     "gulp-imagemin": "^6.0.0"
-  }
+  },
+  "dependencies": {
+    "reset-css": "^5.0.1"
+}
+
 }

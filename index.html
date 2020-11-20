@@ -3,13 +3,85 @@
   <head>
     <meta charset="UTF-8" />
     <title>Forkio</title>
-    <!-- <link rel="icon" href="dist/images/favicon.png" type="image/png" /> -->
+    <link rel="icon" href="dist/images/header/logo.svg" type="image/png" />
     <link rel="stylesheet" href="dist/styles/style.min.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Montserrat&display=swap" rel="stylesheet">
   </head>
+
   <body>
-    
+    <header class="header">
+      <div class="wrapper">
+          <div class="header__navigation">
+              <a href="/" class="header__logo">
+                 <div class="header__logo-img"></div>
+                  <span class="header__logo-text">Forkio</span>
+              </a>
+              <input class="collapsable-input" type="checkbox" id="collapsable-menu">
+              <label for="collapsable-menu" class="header__switch-label">
+                  <span></span>
+              </label>
+  
+                  <div class="header__menu" id="collapsable">
+                      <nav class="header__menu-nav nav">
+                          <ul class="nav__list">
+                              <li class="nav__list-item"><a href="#void">Overview</a></li>
+                              <li class="nav__list-item"><a href="#void">About Fork</a></li>
+                              <li class="nav__list-item"><a href="#void">Buying Options</a></li>
+                              <li class="nav__list-item"><a href="#void">Support</a></li>
+                          </ul>
+                      </nav>
+                  </div>
+
+                  <!-- <nav class="menu">
+                    <div class="burger-menu-wrap">
+                      <div class="burger-menu">
+                        <span class="burger-menu-inner"></span>
+                      </div>
+                    </div>
+                    <ul class="menu__list">
+                      <li class="menu__item">
+                        <a href="" class="menu__link">Overview</a>
+                      </li>
+                      <li class="menu__item">
+                        <a href="" class="menu__link">About Fork</a>
+                      </li>
+                      <li class="menu__item">
+                        <a href="" class="menu__link">Buying Options</a>
+                      </li>
+                      <li class="menu__item">
+                        <a href="" class="menu__link">Support</a>
+                      </li>
+                    </ul>
+                  </nav> -->
+
+                  <button class="header__button">Buy now</button>
+              </div>
+          </div>
+      </header>
+      <div class="intro">
+        <div class="wrapper">
+            <div class="intro__info">
+                <div class="intro__info-text">
+                    <h2 class="intro__info-text-title">Fork App</h2>
+                    <span class="intro__info-text-subtitle">A Real Gamechanger In The World Of Web-Development</span>
+                    <span class="intro__info-text-version">v. 2.8 For Mac and Windows</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="action">
+        <button class="action__button">Download For Free Now</button>
+        <span class="action__text">Unlimited 30-Days Trial Period</span>
+    </div>
+
+
+
 
     
+
     <script src="dist/scripts/script.min.js"></script>
   </body>
 </html>
