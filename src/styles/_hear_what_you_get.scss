@@ -1,3 +1,5 @@
+@import "variables";
+
 .hear-what-you-get{
     display: flex;
     justify-content: space-between;
@@ -63,11 +65,13 @@
         width: 500px;
         
     }
+
     .hear-what-you-get__hidden-heading::before{
         content: '< Here is what you get >';
         font-style: normal;
         font-weight: bold;
-        font-size: 32px;
+        font-size: 42px;
+        width: 100%;
         line-height: 38px;
         color: #8D81AC;
         
@@ -118,11 +122,16 @@
         .hear-what-you-get__picture{
             width: 320px;
         }
+        .hear-what-you-get__hidden-heading {
+            width: 240px;
+            text-align: center;
+        }
         .hear-what-you-get__hidden-heading::before{
             content: '< Here is what you get >';
             font-style: normal;
             font-weight: bold;
-            font-size: 32px;
+            width: 200px;
+            font-size: 28px;
             line-height: 38px;
             color: #8D81AC;
             text-align: center;

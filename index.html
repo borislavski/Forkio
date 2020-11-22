@@ -3,7 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <title>Forkio</title>
-    <!-- <link rel="icon" href="dist/images/favicon.png" type="image/png" /> -->
    
     
     <meta name="viewport" content="width=width-device, initial-scale=1.0">
@@ -21,55 +20,33 @@
 
   <body>
     
+    <header class="header"><div class="wrapper">
+        <div class="header__navigation">
+            <a href="/" class="header__logo">
+               <div class="header__logo-img"></div>
+                <span class="header__logo-text">Forkio</span>
+            </a>
+            <input class="collapsable-input" type="checkbox" id="collapsable-menu">
+            <label for="collapsable-menu" class="header__switch-label">
+                <span></span>
+            </label>
     
-      <div class="wrapper">
-          <div class="header__navigation">
-              <a href="/" class="header__logo">
-                 <div class="header__logo-img"></div>
-                  <span class="header__logo-text">Forkio</span>
-              </a>
-              <input class="collapsable-input" type="checkbox" id="collapsable-menu">
-              <label for="collapsable-menu" class="header__switch-label">
-                  <span></span>
-              </label>
+                <div class="header__menu" id="collapsable">
+                    <nav class="header__menu-nav nav">
+                        <ul class="nav__list">
+                            <li class="nav__list-item"><a href="#void">Overview</a></li>
+                            <li class="nav__list-item"><a href="#void">About Fork</a></li>
+                            <li class="nav__list-item"><a href="#void">Buying Options</a></li>
+                            <li class="nav__list-item"><a href="#void">Support</a></li>
+                        </ul>
+                    </nav>
+                </div>
   
-                  <div class="header__menu" id="collapsable">
-                      <nav class="header__menu-nav nav">
-                          <ul class="nav__list">
-                              <li class="nav__list-item"><a href="#void">Overview</a></li>
-                              <li class="nav__list-item"><a href="#void">About Fork</a></li>
-                              <li class="nav__list-item"><a href="#void">Buying Options</a></li>
-                              <li class="nav__list-item"><a href="#void">Support</a></li>
-                          </ul>
-                      </nav>
-                  </div>
-
-                  <!-- <nav class="menu">
-                    <div class="burger-menu-wrap">
-                      <div class="burger-menu">
-                        <span class="burger-menu-inner"></span>
-                      </div>
-                    </div>
-                    <ul class="menu__list">
-                      <li class="menu__item">
-                        <a href="" class="menu__link">Overview</a>
-                      </li>
-                      <li class="menu__item">
-                        <a href="" class="menu__link">About Fork</a>
-                      </li>
-                      <li class="menu__item">
-                        <a href="" class="menu__link">Buying Options</a>
-                      </li>
-                      <li class="menu__item">
-                        <a href="" class="menu__link">Support</a>
-                      </li>
-                    </ul>
-                  </nav> -->
-
-                  <button class="header__button">Buy now</button>
-              </div>
-          </div>
-      </header>
+                <button class="header__button">Buy now</button>
+            </div>
+        </div></header>
+      
+      
       <div class="intro">
         <div class="wrapper">
             <div class="intro__info">
@@ -87,7 +64,7 @@
     </div>
 
     <section class="revolutionary-editor">
-        <h2 class="revolutionary-editor__title">зREVOLUTINARY EDITOR</h2>
+        <h2 class="revolutionary-editor__title">REVOLUTINARY EDITOR</h2>
         <p class="revolutionary-editor__text">Aenean cursus imperdiet nisl id fermentum. Aliquam pharetra dui laoreet vulputate dignissim. Sed id metus id quam auctor molestie eget ut augue.</p>
         <ul class="revolutionary-editor__btns" style="padding: 2px 0;">
             <li class="revolutionary-editor__btn">
@@ -158,9 +135,49 @@
             <img class="hear-what-you-get__picture" alt="hello" src="src/images/_hear_what_you_get_picture.png">
         </div>
     </section>
-  <section class="about">
+
+    <section class="about">
+        <div class="wrapper">
+            <h2 class="about__title">People Are Talking About Fork</h2>
+            <div class="about__review-list review-list">
+                <div class="review-list__item">
+                    <img class="review-list__item-logo" src="/dist/images/about-fork/logo1.png" alt="logo-review" width="165">
+                    <span class="review-list__item-text">Sed vestibulum scelerisque urna, eu finibus leo facilisis sit amet.
+                Proin id dignissim magna. Sed varius urna et pulvinar venenatis. </span>
+                </div>
+                <div class="review-list__item">
+                    <img class="review-list__item-logo" src="/dist/images/about-fork/logo2.png" alt="logo-review" width="148">
+                    <span class="review-list__item-text">Donec euismod dolor ut ultricies consequat. Vivamus urna ipsum,
+                rhoncus molestie neque ac, mollis eleifend nibh.</span>
+                </div>
+                <div class="review-list__item">
+                    <img class="review-list__item-logo" src="/dist/images/about-fork/logo3.png" alt="logo-review" width="64">
+                    <span class="review-list__item-text">In efficitur in velit et tempus. Duis nec odio dapibus, suscipit
+                erat fringilla, imperdiet nibh. Morbi tempus auctor felis ac vehicula. </span>
+                </div>
+                <div class="review-list__item">
+                    <img class="review-list__item-logo" src="/dist/images/about-fork/logo4.png" alt="logo-review" width="225">
+                    <span class="review-list__item-text">Sed vestibulum scelerisque urna, eu finibus leo facilisis sit
+                amet. Proin id dignissim magna. Sed varius urna et pulvinar venenatis. </span>
+                </div>
+                <div class="review-list__item">
+                    <img class="review-list__item-logo" src="/dist/images/about-fork/logo5.png" alt="logo-review" width="166">
+                    <span class="review-list__item-text">Praesent ut eros tristique, malesuada lectus vel, lobortis massa.
+                Nulla faucibus lorem id arcu consequat faucibus. </span>
+                </div>
+                <div class="review-list__item">
+                    <img class="review-list__item-logo" src="/dist/images/about-fork/logo6.png" alt="logo-review" width="108">
+                    <span class="review-list__item-text">Fusce pharetra erat id odio blandit, nec
+                pharetra eros venenatis.
+                Pellentesque porttitor cursus massa et vestibulum.</span>
+                </div>
+            </div>
+            <span class="about__subtitle">Duis lobortis arcu sed arcu tincidunt feugiat. Nulla nisi mauris, facilisis vitae
+            aliquet id, imperdiet quis nibh. Donec eget elit eu libero tincidunt consequat nec elementum orci. Cum
+            sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. </span>
+        </div>
+    </section>
     
-  </section>
     <section class="fork-subscription-pricing">
         <h2 class="fork-subscription-pricing__heading">
             Fork Subscription Pricing
