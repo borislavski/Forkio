@@ -13,6 +13,7 @@ function devWatch() {
     });
 
     gulp.watch("src/styles/*.scss", convertScss);
+    gulp.watch("src/styles/*.scss", convertScss);
     gulp.watch("./src/scripts/*.js", compressJs);
     gulp.watch("./src/images/**", gulp.series(cleanImages, compressImages));
     gulp.watch("./index.html").on("change", browserSync.reload);
