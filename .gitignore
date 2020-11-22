@@ -3,3 +3,5 @@
 node_modules
 thumbs.db
 dist
+.DS_Store
+.vscode
