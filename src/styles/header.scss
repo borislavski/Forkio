@@ -1,15 +1,16 @@
 @import "variables";
 @import "mixins";
+@import "reset";
+@import "main";
 
 .header {
-    //background-color: $header-bcg;
+    background-color: $header-bg;
   
     &__navigation {
       display: flex;
       justify-content: space-between;
       position: relative;
       padding: 3.5rem .5rem;
-      border: 1px solid red;
     }
   
     &__logo {
@@ -162,7 +163,7 @@
     width: 3.7rem;
     height: 3.7rem;
     position: relative;
-    top: 3.5rem;
+    //top: 3.5rem;
     right: 1.5rem;
     display: block;
     cursor: pointer;
@@ -219,6 +220,8 @@
   
   @media screen and (min-width: $tablet) {
     .header {
+      background-color: $header-bg;
+
       &__navigation {
         display: flex;
         flex-wrap: wrap;
