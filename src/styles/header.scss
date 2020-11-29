@@ -1,5 +1,4 @@
 @import "variables";
-@import "mixins";
 @import "reset";
 @import "main";
 
@@ -95,7 +94,7 @@
         flex-direction: column;
         align-items: center;
         text-align: center;
-        padding-top: 5rem;
+        // padding-top: 5rem;
       }
   
       &-text-title {
@@ -151,6 +150,7 @@
   //collapsable
   .collapsable-input {
     display: none;
+    outline: none;
     //visibility: hidden;
   }
   
@@ -163,10 +163,11 @@
     width: 3.7rem;
     height: 3.7rem;
     position: relative;
-    //top: 3.5rem;
+    // top: 3.5rem;
     right: 1.5rem;
     display: block;
     cursor: pointer;
+    
   }
   
   .header__switch-label span {
@@ -280,6 +281,7 @@
         &__list-item a {
           border-left: unset;
           padding-left: 0;
+          font-weight: bold;
         }
   
         &__list-item a:hover {
@@ -378,6 +380,7 @@
       background-position: bottom;
   
       &__info-text {
+         padding-top: 0px;
         &-title {
           font-size: 8.2rem;
           line-height: 8.3rem;

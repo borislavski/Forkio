@@ -1,10 +1,12 @@
 const gulp = require("gulp");
 const sass = require("gulp-sass");
 const minify = require("gulp-minify");
+const autoprefixer = require('gulp-autoprefixer');
 const imagemin = require("gulp-imagemin");
 const rename = require("gulp-rename");
 const concat = require("gulp-concat");
 const clean = require("gulp-clean");
+const purgecss = require('gulp-purgecss')
 const browserSync = require("browser-sync").create();
 
 function devWatch() {
@@ -12,9 +14,8 @@ function devWatch() {
         server: "./"
     });
 
-    gulp.watch("src/styles/*.scss", convertScss);
-    gulp.watch("src/styles/*.scss", convertScss);
-    gulp.watch("./src/scripts/*.js", compressJs);
+    gulp.watch("src/styles/*.scss", convertScss).on("change", browserSync.reload);;
+    gulp.watch("./src/scripts/*.js", compressJs).on("change", browserSync.reload);;
     gulp.watch("./src/images/**", gulp.series(cleanImages, compressImages));
     gulp.watch("./index.html").on("change", browserSync.reload);
 }
@@ -31,6 +32,10 @@ function convertScss() {
         )
         .on("error", sass.logError)
         .pipe(rename({ suffix: ".min" }))
+        .pipe(autoprefixer({cascade: false}))
+        .pipe(purgecss({
+            content: ['index.html']
+        }))
         .pipe(gulp.dest("./dist/styles"))
         .pipe(browserSync.stream());
 }
@@ -73,11 +78,10 @@ function cleanImages() {
         .pipe(browserSync.stream());
 }
 
-exports.clean = cleanDist;
-exports.default = gulp.series(
+exports.dev = devWatch;
+exports.build = gulp.series(
     cleanDist,
     convertScss,
     compressJs,
     compressImages,
-    devWatch
 );
